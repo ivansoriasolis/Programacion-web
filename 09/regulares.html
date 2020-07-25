@@ -1,0 +1,52 @@
+<script>
+    re = /ab+c/
+    cadena = "abc"
+    match = re.test(cadena)
+    document.write(match)
+
+    re = /ab*c/     
+    cadena = "ac"
+    match = re.test(cadena)
+    document.write(match)
+
+    re = /a[b-z]+c/
+    cadena = "aac"
+    match = re.test(cadena)
+    document.write(match)
+
+    re = /a[xyz]c/
+    cadena = "axc"
+    match = re.test(cadena)
+    document.write(match)
+
+    re = /a.c/
+    cadena = "a%c"
+    match = re.test(cadena)
+    document.write(match)
+
+    re = /a.+c/
+    cadena = "a%&%&$&%)c"
+    match = re.test(cadena)
+    document.write(match)
+
+    re = /[^$]_[0-9]+/
+    cadena = "a_121321"
+    match = re.test(cadena)
+    document.write(match)
+
+    // re = /[a-zA-Z^0-9]+/
+    // cadena = "3345"
+    // match = re.test(cadena)
+    // document.write(match)
+
+    re = /[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)/
+    cadena = "isoria80@investigacion.unajma.edu.pe"
+    match = re.test(cadena)
+    document.write(match)
+
+    re = /<p>.*<\/p>/
+    cadena = "<p>hola mundo<p>"
+    match = re.test(cadena)
+    document.write(match)
+
+</script>

@@ -5,7 +5,6 @@ if (typeof a!= 'undefined') document.write('a = ' + a + '<br>')
 if (typeof b!= 'undefined') document.write('b = ' + b + '<br>')
 if (typeof c!= 'undefined') document.write('c = ' + c + '<br>')
 
-
 function test()
 {
     a = 123
