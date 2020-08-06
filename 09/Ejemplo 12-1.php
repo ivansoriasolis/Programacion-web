@@ -15,7 +15,7 @@
       {
         try //Navegador IE 5?
         {
-            request = new ActiveXObjetct("Microsoft.XMLHTTP")
+            request = new ActiveXObject("Microsoft.XMLHTTP")
         }
         catch(e3) //no hay soporte asincrono
         {
