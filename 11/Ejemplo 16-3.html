@@ -7,12 +7,15 @@
   <body>
     <button id='clickme'>Click me</button>
     <p id='result'>Este es un parrafo</p>
+    
     <script>
-      $('#clickme').click(function()
+      function cambiar()
       {
         $('#result').html('Has hecho click')
       }
-      )
+
+      $('#clickme').click( cambiar )
+      
     </script>
   </body>
 </html>
