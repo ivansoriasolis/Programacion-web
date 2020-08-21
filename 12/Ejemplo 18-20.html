@@ -1,38 +1,29 @@
-<!DOCTYPE html> <!--list3.html-->
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Ejemplo de geolocalizacion</title>
-  </head> 
-  <body> 
+    <title>Drawing Images</title>
+    <script src='OSC.js'></script>
+  </head>
+  <body>
+    <canvas id='mycanvas' width='480' height='260'></canvas>
+
     <script>
-      if (typeof navigator.geolocation == 'undefined')
-         alert("Geolocalizacion no soportada.")
-      else
-        navigator.geolocation.getCurrentPosition(granted, denied)
-      function granted(position)
+      canvas               = O('mycanvas')
+      context              = canvas.getContext('2d')
+      S(canvas).background = 'lightblue'
+
+      myimage     = new Image()
+      myimage.src = 'image.png'
+
+      myimage.onload = function()
       {
-        var lat = position.coords.latitude
-        var lon = position.coords.longitude
-       
-        alert("Permisos concedidos. Tu ubicacion es:\n\n" 
-          + lat + ", " + lon +
-          "\n\nClick en 'ACEPTAR' para cargar el mapa")
-        window.location.replace("https://www.google.com/maps/@"
-          + lat + "," + lon + ",14z")
-      }
-      function denied(error)
-      {
-        var message
-        switch(error.code)
-        {
-          case 1: message = 'Permisos denegados'; break;
-          case 2: message = 'Posicion no disponible'; break;
-          case 3: message = 'Tiempo de espera terminado'; break;
-          case 4: message = 'Error desconocido'; break;
-        }
-        alert("Geolocation Error: " + message)
+        context.drawImage(myimage,                 20,  20          )
+        context.drawImage(myimage,                140,  20, 220, 220)
+        context.drawImage(myimage,                380,  20,  80, 220)
+        context.drawImage(myimage, 30, 30, 40, 40, 20, 140, 100, 100)
+
+        context.drawImage(canvas, 0, 0, 480, 260,  20, 140, 100, 100)
       }
     </script>
-
   </body>
 </html>
